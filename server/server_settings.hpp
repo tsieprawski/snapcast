@@ -58,6 +58,7 @@ struct ServerSettings
         size_t streamChunkMs{20};
         bool sendAudioToMutedClients{false};
         std::vector<std::string> bind_to_address{{"0.0.0.0"}};
+        bool muteNewClients{false};
     };
 
     struct Logging

@@ -108,6 +108,8 @@ int main(int argc, char* argv[])
         conf.add<Value<int>>("", "stream.buffer", "Buffer [ms]", settings.stream.bufferMs, &settings.stream.bufferMs);
         conf.add<Value<bool>>("", "stream.send_to_muted", "Send audio to muted clients", settings.stream.sendAudioToMutedClients,
                               &settings.stream.sendAudioToMutedClients);
+        conf.add<Value<bool>>("", "stream.mute_new_clients", "Mute new clients", settings.stream.muteNewClients,
+                              &settings.stream.muteNewClients);
 
         // logging settings
         conf.add<Value<string>>("", "logging.sink", "log sink [null,system,stdout,stderr,file:<filename>]", settings.logging.sink, &settings.logging.sink);

@@ -612,6 +612,11 @@ void Server::onMessageReceived(StreamSession* streamSession, const msg::BaseMess
         }
 
         ClientInfoPtr client = group->getClient(streamSession->clientId);
+        if (settings_.stream.muteNewClients)
+        {
+            client->config.volume.percent = 0;
+            client->config.volume.muted = true;
+        }
 
         LOG(DEBUG, LOG_TAG) << "Sending ServerSettings to " << streamSession->clientId << "\n";
         auto serverSettings = make_shared<msg::ServerSettings>();

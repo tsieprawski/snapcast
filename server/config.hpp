@@ -54,7 +54,6 @@ T jGet(const json& j, const std::string& what, const T& def)
     }
 }
 
-
 struct Volume
 {
     Volume(uint16_t _percent = 100, bool _muted = false) : percent(_percent), muted(_muted)
